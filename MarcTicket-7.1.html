@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Marc Ticket</title>
+</head>
+
+<body>
+
+  <!Get time>
+ <timeStyle>
+    <span id="time"> </span>
+</timeStyle>
+  
+  <!Get date>
+  <date>
+  <span id="today"> </span>
+    </date> 
+
+<!Make it flash>
+<div class="rectangle">
+    <img src="https://www.dropbox.com/s/z0udouyq9cxibeq/Hide%20Show%20White%20Rectangle%20%281%20sec%29.gif?raw=1">
+    
+</div>
+    
+    
+    <style>
+        body {
+          background-image: url(https://www.dropbox.com/s/hdh3yyij2wm113k/MarcWithID.gif?raw=1);
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: 100% 100%;
+        }
+        
+        timeStyle {
+          color: rgb(38,38,38);
+          font-family: "Verdana";
+          letter-spacing: -.5px;
+          margin-left: 15%;
+          font-size:  14px;
+          display:inline-block;
+          margin-top: 40%;
+        }
+        
+        date {
+          color: rgb(38,38,38);
+          font-family: "Verdana";
+          letter-spacing: -.5px;
+          margin-left: 25%;
+          font-size:  14px;
+          display:inline-block;
+          margin-top: 40%;
+        }
+
+        img {
+          width: 275px;
+          height: 50px;       
+          margin-left: 11%;
+          margin-top: -11%;
+          position: absolute;
+          z-index:10;
+          }
+
+        
+        
+        </style>
+        
+        <script>
+        `use strict`
+        
+        //Get Time
+        function addHours(date, hours, minutes) {
+  date.setHours(date.getHours() + hours);
+  date.setMinutes(date.getMinutes() + minutes);
+  
+  return date;
+}
+
+const date = new Date();
+
+const time = addHours(date, 1, 27)
+
+console.log(time); 
+
+document.getElementById("time").textContent = time.toLocaleTimeString('en'); // represent on html page
+          
+          
+        var datetime = new Date();
+       // console.log(datetime); // it will represent date in the console of developers tool
+        // document.getElementById("time").textContent = datetime.toLocaleTimeString("cct"); // represent on html page
+        
+        //Get Today
+        const today = datetime.toLocaleDateString("en", {
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        })
+        console.log(today)
+        document.getElementById("today").textContent = today; // represent on html page
+        
+        //Make date/time flash
+        
+       </script>
+
+
+
+
+
+</body>
+</html>
+
+
